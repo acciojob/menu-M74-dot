@@ -82,25 +82,25 @@ const data = [
     const [menuData,setMenuData] = useState(data);
     const [filteredMenuData,setFilteredMenuData] = useState(data);
 	return (
-	  <div style={{width:"80vw",margin:"auto"}}>
+	  <div id="main" style={{width:"80vw",margin:"auto"}}>
         <h1>Our Menu</h1>
         <div>
             <button onClick={()=>{
                 setFilteredMenuData(data);
             }}>All</button>
-            <button onClick={()=>{
+            <button id="filter-btn-1" onClick={()=>{
                 const nArr = menuData.filter((item)=>{
                     return item.category=="breakfast"
                 })
                 setFilteredMenuData(nArr);
             }}>Breakfast</button>
-            <button onClick={()=>{
+            <button id="filter-btn-2" onClick={()=>{
                 const nArr = menuData.filter((item)=>{
                     return item.category=="lunch"
                 })
                 setFilteredMenuData(nArr)
             }}>Lunch</button>
-            <button onClick={()=>{
+            <button id="filter-btn-3" onClick={()=>{
                 const nArr = menuData.filter((item)=>{
                     return item.category=="shakes"
                 })
