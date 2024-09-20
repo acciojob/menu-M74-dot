@@ -2,7 +2,7 @@ import React from "react";
 
 const Cards = ({img,title,price,desc}) => {
     return(
-        <div style={{display:"flex",width:"450px",height:"150px",border:"1px solid black",marginTop:"30px"}}>
+        <div data-test-id={"menu-item-" + category} style={{display:"flex",width:"450px",height:"150px",border:"1px solid black",marginTop:"30px"}}>
             <div style={{padding:"20px"}}>
                 <img src={img} alt="image-borken"/>
             </div>
