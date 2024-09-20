@@ -90,19 +90,19 @@ const data = [
             }}>All</button>
             <button id="filter-btn-1" data-test-id="menu-item-breakfast" onClick={()=>{
                 const nArr = menuData.filter((item)=>{
-                    return item.category=="breakfast"
+                    return item.category==="breakfast"
                 })
                 setFilteredMenuData(nArr);
             }}>Breakfast</button>
             <button id="filter-btn-2" data-test-id="menu-item-lunch" onClick={()=>{
                 const nArr = menuData.filter((item)=>{
-                    return item.category=="lunch"
+                    return item.category==="lunch"
                 })
                 setFilteredMenuData(nArr)
             }}>Lunch</button>
             <button id="filter-btn-3" data-test-id="menu-item-shakes" onClick={()=>{
                 const nArr = menuData.filter((item)=>{
-                    return item.category=="shakes"
+                    return item.category==="shakes"
                 })
                 setFilteredMenuData(nArr)
             }}>Shakes</button>
