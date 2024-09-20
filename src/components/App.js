@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import Cards from './Cards';
+import React, { useState } from 'react'
+import CompA from './CompA';
+
 
 const data = [
     {
@@ -74,72 +75,82 @@ const data = [
       img: './images/item-9.jpeg',
       desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
-  ]
+  ];
   
-  
-  const App = () =>  {
 
-    const [menuData,setMenuData] = useState(data);
-    const [filteredMenuData,setFilteredMenuData] = useState(data);
-	return (
-	  <div id="main" style={{width:"80vw",margin:"auto"}}>
+
+const App = () => {
+
+    const[items, setItems] = useState(data)
+    const[filteredItems, setFilteredItems] = useState(data)
+
+
+    
+
+  return (
+    <div id='main'>
+        
         <h1>Our Menu</h1>
+
         <div>
-            <button 
-                onClick={()=>{
-                    const cat = "all" 
-                    setFilteredMenuData(data);
-                }}
-            >
-                All
-            </button>
-            <button 
-                id="filter-btn-1"
-                onClick={()=>{
-                    const cat = "breakfast"
-                    const nArr = menuData.filter((item)=>{
-                        return item.category===cat
-                    })
-                    setFilteredMenuData(nArr);
-                }}
-            >
-                Breakfast
-            </button>
-            <button 
-                id="filter-btn-2"
-                onClick={()=>{
-                    const cat = "lunch"
-                    const nArr = menuData.filter((item)=>{
-                        return item.category===cat
-                    })
-                setFilteredMenuData(nArr)
-                }}
-            >
-                Lunch
-            </button>
-            <button 
-                id="filter-btn-3"
-                onClick={()=>{
-                    const cat = "shakes"
-                    const nArr = menuData.filter((item)=>{
-                        return item.category===cat
-                    })
-                setFilteredMenuData(nArr)
-                }}
-            >
-                Shakes
-            </button>
+            <button onClick={() => {
+                const cat = "all"
+
+                // const nArr = items.filter((item) => {
+                //     return item.category == cat
+                // })
+
+                setFilteredItems(data)
+                // console.log(nArr)
+
+
+            }}>All</button>
+            <button id='filter-btn-1' onClick={() => {
+                const cat = "breakfast"
+
+                const nArr = items.filter((item) => {
+                    return item.category == cat
+                })
+
+                setFilteredItems(nArr)
+                // console.log(nArr)
+
+
+            }}>Breakfast</button>
+            <button id='filter-btn-2' onClick={() => {
+                const cat = "lunch"
+
+                const nArr = items.filter((item) => {
+                    return item.category == cat
+                })
+
+                setFilteredItems(nArr)
+                // console.log(nArr)
+
+
+            }}>Lunch</button>
+            <button id='filter-btn-3' onClick={() => {
+                const cat = "shakes"
+
+                const nArr = items.filter((item) => {
+                    return item.category == cat
+                })
+
+                setFilteredItems(nArr)
+                // console.log(nArr)
+
+
+            }}>Shakes</button>
         </div>
 
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",marginTop:"50px"}}>
-            {
-                filteredMenuData.map((item)=>(
-                    <Cards key={item.id}  img={item.img} desc={item.desc} price={item.price} title={item.title} />
-                ))
-            }
+        <div style={{display:'flex', flexWrap : "wrap"}}>
+            {filteredItems.map((item) => {
+                return <Cards item={item} />
+            })}
         </div>
-	  </div>
-	);
-  }
-  
-  export default App;
+
+    </div>
+  )
+}
+
+export default App
