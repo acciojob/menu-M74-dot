@@ -85,27 +85,50 @@ const data = [
 	  <div id="main" style={{width:"80vw",margin:"auto"}}>
         <h1>Our Menu</h1>
         <div>
-            <button onClick={()=>{
-                setFilteredMenuData(data);
-            }}>All</button>
-            <button id="filter-btn-1" data-test-id="menu-item-breakfast" onClick={()=>{
-                const nArr = menuData.filter((item)=>{
-                    return item.category==="breakfast"
-                })
-                setFilteredMenuData(nArr);
-            }}>Breakfast</button>
-            <button id="filter-btn-2" data-test-id="menu-item-lunch" onClick={()=>{
-                const nArr = menuData.filter((item)=>{
-                    return item.category==="lunch"
-                })
+            <button 
+                onClick={()=>{
+                    const cat = "all" 
+                    setFilteredMenuData(data);
+                }}
+            >
+                All
+            </button>
+            <button 
+                id="filter-btn-1"
+                onClick={()=>{
+                    const cat = "breakfast"
+                    const nArr = menuData.filter((item)=>{
+                        return item.category===cat
+                    })
+                    setFilteredMenuData(nArr);
+                }}
+            >
+                Breakfast
+            </button>
+            <button 
+                id="filter-btn-2"
+                onClick={()=>{
+                    const cat = "lunch"
+                    const nArr = menuData.filter((item)=>{
+                        return item.category===cat
+                    })
                 setFilteredMenuData(nArr)
-            }}>Lunch</button>
-            <button id="filter-btn-3" data-test-id="menu-item-shakes" onClick={()=>{
-                const nArr = menuData.filter((item)=>{
-                    return item.category==="shakes"
-                })
+                }}
+            >
+                Lunch
+            </button>
+            <button 
+                id="filter-btn-3"
+                onClick={()=>{
+                    const cat = "shakes"
+                    const nArr = menuData.filter((item)=>{
+                        return item.category===cat
+                    })
                 setFilteredMenuData(nArr)
-            }}>Shakes</button>
+                }}
+            >
+                Shakes
+            </button>
         </div>
 
         <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",marginTop:"50px"}}>
