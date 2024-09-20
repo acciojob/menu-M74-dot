@@ -88,19 +88,19 @@ const data = [
             <button onClick={()=>{
                 setFilteredMenuData(data);
             }}>All</button>
-            <button id="filter-btn-1" onClick={()=>{
+            <button id="filter-btn-1" data-test-id="menu-item-breakfast" onClick={()=>{
                 const nArr = menuData.filter((item)=>{
                     return item.category=="breakfast"
                 })
                 setFilteredMenuData(nArr);
             }}>Breakfast</button>
-            <button id="filter-btn-2" onClick={()=>{
+            <button id="filter-btn-2" data-test-id="menu-item-lunch" onClick={()=>{
                 const nArr = menuData.filter((item)=>{
                     return item.category=="lunch"
                 })
                 setFilteredMenuData(nArr)
             }}>Lunch</button>
-            <button id="filter-btn-3" onClick={()=>{
+            <button id="filter-btn-3" data-test-id="menu-item-shakes" onClick={()=>{
                 const nArr = menuData.filter((item)=>{
                     return item.category=="shakes"
                 })
